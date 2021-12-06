@@ -1,0 +1,30 @@
+<ion-tabs (ionTabsDidChange)="doSomething()">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        {{nomePagina}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tab-bar slot="top">
+
+    <ion-tab-button tab="elenco-consegne">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Consegne</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="elenco-scadenze">
+      <ion-icon name="clipboard"></ion-icon>
+      <ion-label>Scadenze</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="impostazioni">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Impostazioni</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

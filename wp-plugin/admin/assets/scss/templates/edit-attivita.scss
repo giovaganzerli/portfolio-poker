@@ -1,0 +1,104 @@
+@import '../config/variables';
+@import '../config/mixin';
+
+#posts-filter {
+    overflow: auto;
+    width: 100%;
+    .search-box {
+        position: sticky;
+        left: 0px;
+        width: 100%;
+    }
+    .tablenav {
+        position: sticky;
+        left: 0px;
+    }
+}
+
+table.wp-list-table {
+    table-layout: auto;
+    tbody {
+        tr:not(.status-trash) {
+            &:hover {
+                .dashicons-edit {
+                    color: #dddddd !important;
+                }
+            }
+            &:nth-child(even) {
+                td:hover a {
+                    background-color: #ffffff;
+                }
+            }
+            th, td {
+                border-bottom: solid 1px #ffffff;
+            }
+            td {
+                white-space: nowrap;
+                overflow: hidden;
+                &[data-colname="Note del corriere"] {
+                    min-width: 200px;
+                    white-space: normal;
+                }
+                &:hover {
+                    overflow: visible;
+                    a {
+                        position: relative;
+                        z-index: 20;
+                        padding: 0px 5px 0px 0px;
+                        background-color: #f9f9f9;
+                    }
+                }
+                .row-actions span:not(.trash):not(.untrash):not(.delete):not(.edit) {
+                    display: none;
+                }
+                .acp-ie-controls {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+            &[data-status="Effettuata"] {
+                background-color: #4caf50;
+                td:hover a {
+                    background-color: #4caf50;
+                }
+                &:nth-child(even) {
+                    background-color: #4caf50;
+                    td:hover a {
+                        background-color: #4caf50;
+                    }
+                }
+                * {
+                    color: #ffffff;
+                }
+            }
+            &[data-status="Non Effettuata"][data-priority="1"] {
+                background-color: #ff5722;
+                td:hover a {
+                    background-color: #ff5722;
+                }
+                &:nth-child(even) {
+                    background-color: #ff5722;
+                    td:hover a {
+                        background-color: #ff5722;
+                    }
+                }
+                * {
+                    color: #ffffff;
+                }
+            }
+            &[data-status="Non Effettuata"][data-priority="2"] {
+                background-color: #ffc107;
+                td:hover a {
+                    background-color: #ffc107;
+                }
+                &:nth-child(even) {
+                    background-color: #ffc107;
+                    td:hover a {
+                        background-color: #ffc107;
+                    }
+                }
+            }
+        }
+    }
+}

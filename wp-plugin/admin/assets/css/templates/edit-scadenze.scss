@@ -1,0 +1,35 @@
+@import '../config/variables';
+@import '../config/mixin';
+
+table.wp-list-table {
+    tbody {
+        tr {
+            &:nth-child(even) {
+                td:hover a {
+                    background: #ffffff;
+                }
+            }
+            td {
+                white-space: nowrap;
+                overflow: hidden;
+                &:hover {
+                    overflow: visible;
+                    a {
+                        position: relative;
+                        z-index: 20;
+                        padding: 0px 5px 0px 0px;
+                        background: #f9f9f9;
+                    }
+                }
+                .row-actions span:not(.trash) {
+                    display: none;
+                }
+                .acp-ie-controls {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

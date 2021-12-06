@@ -1,0 +1,160 @@
+@import '../config/variables';
+@import '../config/mixin';
+
+#posts-filter {
+    overflow: auto;
+    width: 100%;
+    .search-box {
+        position: sticky;
+        left: 0px;
+        width: 100%;
+    }
+    .tablenav {
+        position: sticky;
+        left: 0px;
+    }
+}
+
+table.wp-list-table {
+    table-layout: auto;
+    thead tr th {
+        &.column-5e6a4cbf2f53c {
+            display: none;
+        }
+        &.column-5e2078c70e7b3 {
+            max-width: 0px !important;
+            min-width: 70px !important;
+            padding-right: 0px !important;
+        }
+    }
+    tbody {
+        tr:not(.status-trash) {
+            &:hover {
+                .dashicons-edit {
+                    color: #dddddd !important;
+                }
+            }
+            &:nth-child(even) {
+                td:hover a {
+                    background-color: #ffffff;
+                }
+            }
+            th, td {
+                border-bottom: solid 1px #ffffff;
+            }
+            td {
+                white-space: nowrap;
+                overflow: hidden;
+                &.column-5e6a4cbf2f53c {
+                    display: none;
+                }
+                &[data-colname="Note del corriere"] {
+                    min-width: 200px;
+                    white-space: normal;
+                }
+                &[data-colname="DDT"] {
+                    max-width: 130px;
+                    white-space: normal;
+                }
+                &:hover {
+                    overflow: visible;
+                    a {
+                        position: relative;
+                        z-index: 20;
+                        padding: 0px 5px 0px 0px;
+                        background-color: #f9f9f9;
+                    }
+                }
+                .row-actions span:not(.trash):not(.untrash):not(.delete):not(.edit) {
+                    display: none;
+                }
+                .acp-ie-controls {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+            &.verde { //[data-status="Effettuata"]
+                background-color: #4caf50;
+                td:hover a {
+                    background-color: #4caf50;
+                }
+                &:nth-child(even) {
+                    background-color: #4caf50;
+                    td:hover a {
+                        background-color: #4caf50;
+                    }
+                }
+                * {
+                    color: #ffffff;
+                }
+            }
+            &.verdino { //[data-status="Effettuata" ma con Tipo Codumento = R | T |S]
+                background-color: #a6d8a8;
+                td:hover a {
+                    background-color: #a6d8a8;
+                }
+                &:nth-child(even) {
+                    background-color: #a6d8a8;
+                    td:hover a {
+                        background-color: #a6d8a8;
+                    }
+                }
+                * {
+                    color: #ffffff;
+                }
+            }
+            &.giallo { //[data-status="Presa in carico"]
+                background-color: #ffc107;
+                td:hover a {
+                    background-color: #ffc107;
+                }
+                &:nth-child(even) {
+                    background-color: #ffc107;
+                    td:hover a {
+                        background-color: #ffc107;
+                    }
+                }
+            }
+            &.rosso { //[data-status="Non Effettuata"]
+                background-color: #ff5722;
+                td:hover a {
+                    background-color: #ff5722;
+                }
+                &:nth-child(even) {
+                    background-color: #ff5722;
+                    td:hover a {
+                        background-color: #ff5722;
+                    }
+                }
+                * {
+                    color: #ffffff;
+                }
+                &[data-riconsegna="true"] {
+                    background-color: #4c73af;
+                    td:hover a {
+                        background-color: #4c73af;
+                    }
+                    &:nth-child(even) {
+                        background-color: #4c73af;
+                        td:hover a {
+                            background-color: #4c73af;
+                        }
+                    }
+                }
+            }
+            &.grigino { //[data-status="Pending"]
+                background-color: #f9f9f9;
+                td:hover a {
+                    background-color: #f9f9f9;
+                }
+                &:nth-child(even) {
+                    background-color: #f9f9f9;
+                    td:hover a {
+                        background-color: #f9f9f9;
+                    }
+                }
+            }
+        }
+    }
+}

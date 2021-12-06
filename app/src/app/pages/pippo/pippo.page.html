@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Pippo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p>Ecco il contento della variabile: {{variabile}}</p>
+
+  <div class="pad-container">
+    <canvas id="pad-firma" width="350" height="200"></canvas>
+
+    <ion-button color="primary" (click)="salvaFirma()">Salva</ion-button>
+    <ion-button color="warning" (click)="pulisciPad()">Pulisci</ion-button>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3>Lista da riordinare</h3>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="toggleReorder()">Toggle</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-reorder-group (ionItemReorder)="reorderFunc($event)" disabled="false">
+    <ion-item *ngFor="let a of arr; let i=index">
+      <ion-label>
+        {{i + ': ' + a}}
+      </ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-reorder-group>
+
+</ion-content>

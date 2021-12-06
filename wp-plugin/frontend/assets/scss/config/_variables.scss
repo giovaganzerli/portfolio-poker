@@ -1,0 +1,18 @@
+/** COLORS PATTERN **/
+$white: #FFFFFF;
+$black: #292521;
+
+/*
+ * d - The Class Name Es .d-12 (if is 'null' element have not a class element associated)
+ * desktop - @Media Query device name Es. @include device(desktop) { }
+ * 0 - Device Screen max-widht (if is 0 the @menia query haven't a max-width limit)
+ * 1024 - Device Screen min-width (if is not set @menia query haven't a min-width limit)
+*/
+
+$devices: d desktop 0 1025,
+         t from-tablet 1024,
+         ts from-tablet-small 940,
+         null tablet 1024 768,
+         m from-mobile 767,
+         null mobile 767 481,
+         null mobile-small 480;
